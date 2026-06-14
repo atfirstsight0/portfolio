@@ -1,0 +1,37 @@
+RENAME YOUR PROTON FILES TO THESE EXACT NAMES, THEN PLACE IN THE FOLDER SHOWN.
+(Clean filenames = working links + professional presentation.)
+
+files/work-samples/
+  01-on-demand-pd-vendor.pdf              <- Sample 1A - Hired Vendor Teq OTIS to Develop On-Demand PD.pdf
+  02-department-wide-accessibility-program.pdf  <- Sample 1B - Built out Department-wide Accessibility Program.pdf
+  03-accessibility-ra-tracker.pdf         <- Sample 1C - Accessibility RA Tracker.pdf
+  04-ada-policy-processes-documentation.pdf  <- Sample 1D - Development of ADA Policy, Processes, & Documentation.pdf
+  05-lunch-and-learn-training-deck.pdf    <- Sample 2 - Lunch & Learn Training Deck.pdf
+  06-co-location-and-accessibility.pdf    <- Sample 3 - Co-Location and Accessibility.pdf
+  07-automated-508-accessibility-audits.pdf  <- Sample 4 - ...Automated 508 Accessibility Audits.pdf
+  08-building-accessibility-profile.pdf   <- Sample 5 - Building Accessibility Profile.pdf
+  09-workflow-go-live-one-pager.pdf       <- Sample 6 - New Workflow Training One Pager Go-Live Aid.pdf
+  10-workflow-diagram.pdf                 <- Sample 7 - New Workflow Diagram.pdf
+  11-dhs-report.pdf                       <- Sample 8 - DHS Report - Marc Guillaume.pdf
+  12-cqie-overview-outline.png            <- Sample 9 - CQI&E High Level Overview Outline.png
+  13-pes-assessment-mockup.pdf            <- Sample 10 - PES Assessment MET Mock Up.xls.pdf
+
+files/multimedia/
+  01-ld-training-senior-district-leaders.mp4  <- 1. MG Leading a Learning & Development Training...mp4
+  02-nyrr-partner-forum-2024.jpg          <- 2. Presenting on Accessibility at 2024 NYRR Partner Forum.jpg
+  03-beyond-access-forum-2022.png         <- 3. Presenting at the 2022 Beyond Access Forum.PNG
+
+files/press/
+  01-disability-inclusion-and-accessibility.pdf  <- A Lively and Engaging Look at Disability Inclusion...pdf
+  02-disability-awareness-training-resource-sharing.pdf  <- Disability Awareness Training and Resource Sharing.pdf
+  03-nyrr-expands-disability-initiatives.pdf  <- NYRR Expands Disability Initiatives.pdf
+  04-nyrr-enhancing-disability-inclusion-2024.pdf  <- NYRR- How We_re Enhancing Disability Inclusion in 2024.pdf
+
+files/certifications/
+  01-dhs-trusted-tester-certification.pdf <- DHS Trusted Tester Certification.pdf
+  02-dhs-trusted-tester-tools-completion.pdf  <- DHS Trusted Tester Testing Tools Certificate of Completion.pdf
+  03-dhs-section-508-web-completion.pdf   <- DHS Section 508 Standards for Web Certificate of Completion.pdf
+  04-national-ada-coordinator-training-renewal.pdf  <- National ADA Coordinator Training Certification (Renewal).pdf
+  05-certification-detailed-transcript.pdf  <- Certification Detailed Transcript.pdf
+  06-hipaa-hitech-certification.pdf       <- HIPAA & HITECH Certification.pdf
+  07-nys-notary-public.png                <- 1. Commissioned Licensed NYS Notary Public.png

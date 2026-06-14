@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marc Guillaume — Accessibility Program Portfolio</title>
+<meta name="description" content="Work portfolio of Marc Guillaume: enterprise accessibility program leadership, Section 508 / WCAG conformance, VPAT production, and ADA governance. Policy to Practice — Access by Design.">
+<style>
+  :root {
+    --ink: #14213D;
+    --ink-soft: #3A4358;
+    --paper: #FBFAF7;
+    --line: #DAD6CC;
+    --accent: #1F6F5C;       /* deep green — signal, not decoration */
+    --accent-ink: #0F4537;
+    --gold: #B07A1E;          /* federal/credential accent, used sparingly */
+    --focus: #1F6F5C;
+    --card: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    line-height: 1.6;
+    font-size: 18px;
+  }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px; }
+
+  /* Skip link — keyboard accessibility, on-brand for the subject */
+  .skip {
+    position: absolute; left: -999px; top: 0;
+    background: var(--ink); color: #fff; padding: 12px 18px; z-index: 100;
+    text-decoration: none; border-radius: 0 0 6px 0;
+  }
+  .skip:focus { left: 0; }
+
+  a { color: var(--accent-ink); }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  /* ---- Header ---- */
+  header.masthead {
+    border-bottom: 2px solid var(--ink);
+    padding: 64px 0 36px;
+  }
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent-ink); margin: 0 0 18px;
+  }
+  h1 {
+    font-size: clamp(34px, 6vw, 56px);
+    line-height: 1.05; margin: 0 0 10px; font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .role { font-size: clamp(18px, 2.6vw, 22px); color: var(--ink-soft); margin: 0 0 26px; }
+  .contact { font-size: 16px; color: var(--ink-soft); }
+  .contact a { color: var(--accent-ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .contact a:hover { border-color: var(--accent); }
+  .sep { color: var(--line); margin: 0 10px; }
+
+  /* ---- Thesis line: the signature element ---- */
+  .thesis {
+    display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px;
+    font-size: clamp(20px, 3.4vw, 30px);
+    margin: 40px 0 8px; font-weight: 600;
+  }
+  .thesis .arrow { color: var(--accent); font-weight: 400; }
+  .thesis .tail { color: var(--ink-soft); font-weight: 400; font-size: 0.7em; }
+
+  /* ---- Credentials strip ---- */
+  .creds {
+    margin: 28px 0 0; padding: 20px 22px;
+    background: var(--card); border: 1px solid var(--line);
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+  }
+  .creds h2 { margin: 0 0 4px; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-family: ui-monospace, Menlo, monospace; }
+  .creds p { margin: 6px 0 0; font-size: 16px; color: var(--ink-soft); }
+  .creds strong { color: var(--ink); }
+
+  /* ---- Sections ---- */
+  main { padding: 12px 0 80px; }
+  section.group { padding: 44px 0 8px; border-bottom: 1px solid var(--line); }
+  .group-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+  .group-num {
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 15px; color: var(--accent); font-weight: 700;
+  }
+  h2.group-title { font-size: clamp(22px, 3.2vw, 28px); margin: 0; font-weight: 600; }
+  .group-note { color: var(--ink-soft); font-size: 16px; margin: 4px 0 22px; max-width: 60ch; }
+
+  ul.files { list-style: none; margin: 0; padding: 0; }
+  li.file { border-top: 1px solid var(--line); }
+  li.file:first-child { border-top: none; }
+  a.file-link {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    padding: 15px 8px; text-decoration: none; color: var(--ink);
+    transition: background 0.15s ease, padding-left 0.15s ease;
+  }
+  a.file-link:hover { background: #F3F0E8; padding-left: 14px; }
+  .file-name { font-size: 17px; }
+  .file-meta { font-size: 13px; color: var(--ink-soft); font-family: ui-monospace, Menlo, monospace; white-space: nowrap; }
+  .badge {
+    display: inline-block; font-size: 12px; font-family: ui-monospace, Menlo, monospace;
+    color: var(--accent-ink); border: 1px solid var(--accent); border-radius: 3px;
+    padding: 1px 6px; margin-left: 10px; vertical-align: 2px;
+  }
+
+  footer {
+    padding: 36px 0 60px; color: var(--ink-soft); font-size: 14px;
+  }
+  footer .motto {
+    font-size: 15px; letter-spacing: 0.04em; color: var(--accent-ink);
+    margin: 0 0 14px; font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<a href="#work" class="skip">Skip to portfolio contents</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Accessibility Program Portfolio</p>
+    <h1>Marc Guillaume</h1>
+    <p class="role">Accessibility Program Manager &mdash; Enterprise Compliance &amp; Governance</p>
+    <p class="contact">
+      Brooklyn, NY
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="mailto:marcguill@gmail.com">marcguill@gmail.com</a>
+    </p>
+
+    <p class="thesis">
+      Policy <span class="arrow" aria-hidden="true">&rarr;</span>
+      <span class="sr-only">to</span> Practice
+      <span class="tail">&mdash; Access by Design</span>
+    </p>
+
+    <div class="creds">
+      <h2>Federal Credential</h2>
+      <p><strong>DHS Trusted Tester v5.1.3</strong> &mdash; the U.S. government&rsquo;s benchmark certification for Section 508 conformance testing, administered by the Department of Homeland Security. Supported by DHS Section 508 Web certification, National ADA Coordinator Training, and HIPAA &amp; HITECH credentials.</p>
+    </div>
+  </div>
+</header>
+
+<main id="work">
+  <div class="wrap">
+
+    <!-- 1. WORK SAMPLES -->
+    <section class="group" aria-labelledby="g1">
+      <div class="group-head">
+        <span class="group-num" aria-hidden="true">01</span>
+        <h2 class="group-title" id="g1">Work Samples</h2>
+      </div>
+      <p class="group-note">Representative artifacts from enterprise accessibility programs: governance build-outs, ADA policy and process documentation, Section 508 audits, reasonable-accommodation tracking, and training deliverables.</p>
+      <ul class="files">
+        <li class="file"><a class="file-link" href="files/work-samples/01-on-demand-pd-vendor.pdf"><span class="file-name">Vendor-Built On-Demand Professional Development Program</span><span class="file-meta">PDF &middot; 1.0 MB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/02-department-wide-accessibility-program.pdf"><span class="file-name">Department-Wide Accessibility Program Build-Out<span class="badge">Program leadership</span></span><span class="file-meta">PDF &middot; 490 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/03-accessibility-ra-tracker.pdf"><span class="file-name">Accessibility &amp; Reasonable-Accommodation Tracker<span class="badge">Remediation</span></span><span class="file-meta">PDF &middot; 467 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/04-ada-policy-processes-documentation.pdf"><span class="file-name">ADA Policy, Processes &amp; Documentation<span class="badge">Governance</span></span><span class="file-meta">PDF &middot; 1.0 MB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/05-lunch-and-learn-training-deck.pdf"><span class="file-name">Lunch &amp; Learn Training Deck</span><span class="file-meta">PDF &middot; 5.8 MB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/06-co-location-and-accessibility.pdf"><span class="file-name">Co-Location and Accessibility</span><span class="file-meta">PDF &middot; 642 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/07-automated-508-accessibility-audits.pdf"><span class="file-name">Automated Section 508 Accessibility Audits<span class="badge">508 / WCAG</span></span><span class="file-meta">PDF &middot; 215 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/08-building-accessibility-profile.pdf"><span class="file-name">Building an Accessibility Profile</span><span class="file-meta">PDF &middot; 108 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/09-workflow-go-live-one-pager.pdf"><span class="file-name">New Workflow Go-Live One-Pager</span><span class="file-meta">PDF &middot; 160 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/10-workflow-diagram.pdf"><span class="file-name">New Workflow Diagram</span><span class="file-meta">PDF &middot; 584 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/11-dhs-report.pdf"><span class="file-name">DHS Report</span><span class="file-meta">PDF &middot; 164 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/12-cqie-overview-outline.png"><span class="file-name">CQI&amp;E High-Level Overview Outline</span><span class="file-meta">PNG &middot; 200 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/work-samples/13-pes-assessment-mockup.pdf"><span class="file-name">PES Assessment Mock-Up</span><span class="file-meta">PDF &middot; 96 KB</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 2. MULTIMEDIA -->
+    <section class="group" aria-labelledby="g2">
+      <div class="group-head">
+        <span class="group-num" aria-hidden="true">02</span>
+        <h2 class="group-title" id="g2">Multimedia</h2>
+      </div>
+      <p class="group-note">Speaking and training engagements, including leading learning &amp; development sessions for senior district leaders and presenting on accessibility at partner forums.</p>
+      <ul class="files">
+        <li class="file"><a class="file-link" href="https://vimeo.com/1201213259" target="_blank" rel="noopener"><span class="file-name">Leading an L&amp;D Training for Senior District Leaders<span class="badge">Video</span></span><span class="file-meta">Watch on Vimeo</span></a></li>
+        <li class="file"><a class="file-link" href="files/multimedia/02-nyrr-partner-forum-2024.jpg"><span class="file-name">Presenting on Accessibility &mdash; 2024 NYRR Partner Forum</span><span class="file-meta">JPG &middot; 858 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/multimedia/03-beyond-access-forum-2022.png"><span class="file-name">Presenting at the 2022 Beyond Access Forum</span><span class="file-meta">PNG &middot; 181 KB</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 3. PRESS -->
+    <section class="group" aria-labelledby="g3">
+      <div class="group-head">
+        <span class="group-num" aria-hidden="true">03</span>
+        <h2 class="group-title" id="g3">Press &amp; Recognition</h2>
+      </div>
+      <p class="group-note">Third-party coverage of disability-inclusion and accessibility initiatives, including New York Road Runners (NYRR) program features.</p>
+      <ul class="files">
+        <li class="file"><a class="file-link" href="files/press/01-disability-inclusion-and-accessibility.pdf"><span class="file-name">A Look at Disability Inclusion and Accessibility</span><span class="file-meta">PDF &middot; 499 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/press/02-disability-awareness-training-resource-sharing.pdf"><span class="file-name">Disability Awareness Training and Resource Sharing</span><span class="file-meta">PDF &middot; 605 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/press/03-nyrr-expands-disability-initiatives.pdf"><span class="file-name">NYRR Expands Disability Initiatives</span><span class="file-meta">PDF &middot; 1.25 MB</span></a></li>
+        <li class="file"><a class="file-link" href="files/press/04-nyrr-enhancing-disability-inclusion-2024.pdf"><span class="file-name">NYRR: Enhancing Disability Inclusion in 2024</span><span class="file-meta">PDF &middot; 1.47 MB</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 4. CREDENTIALS -->
+    <section class="group" aria-labelledby="g4">
+      <div class="group-head">
+        <span class="group-num" aria-hidden="true">04</span>
+        <h2 class="group-title" id="g4">Licenses &amp; Certifications</h2>
+      </div>
+      <p class="group-note">Federal and professional credentials underpinning the conformance and compliance work above.</p>
+      <ul class="files">
+        <li class="file"><a class="file-link" href="files/certifications/01-dhs-trusted-tester-certification.pdf"><span class="file-name">DHS Trusted Tester Certification<span class="badge">Federal</span></span><span class="file-meta">PDF &middot; 474 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/certifications/02-dhs-trusted-tester-tools-completion.pdf"><span class="file-name">DHS Trusted Tester Testing Tools &mdash; Certificate of Completion</span><span class="file-meta">PDF &middot; 121 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/certifications/03-dhs-section-508-web-completion.pdf"><span class="file-name">DHS Section 508 Standards for Web &mdash; Certificate of Completion</span><span class="file-meta">PDF &middot; 121 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/certifications/04-national-ada-coordinator-training-renewal.pdf"><span class="file-name">National ADA Coordinator Training Certification (Renewal)</span><span class="file-meta">PDF &middot; 251 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/certifications/05-certification-detailed-transcript.pdf"><span class="file-name">Certification Detailed Transcript</span><span class="file-meta">PDF &middot; 1.05 MB</span></a></li>
+        <li class="file"><a class="file-link" href="files/certifications/06-hipaa-hitech-certification.pdf"><span class="file-name">HIPAA &amp; HITECH Certification</span><span class="file-meta">PDF &middot; 122 KB</span></a></li>
+        <li class="file"><a class="file-link" href="files/certifications/07-nys-notary-public.png"><span class="file-name">Commissioned Licensed NYS Notary Public</span><span class="file-meta">PNG &middot; 417 KB</span></a></li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="motto">Access is a human right &mdash; and the right thing to do.</p>
+    <p>Marc Guillaume &middot; Accessibility Program Portfolio &middot; This page is built to WCAG&nbsp;2.2&nbsp;AA: semantic landmarks, keyboard focus, and reduced-motion support.</p>
+  </div>
+</footer>
+
+<style>
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+</style>
+</body>
+</html>
