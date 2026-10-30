@@ -1,6 +1,6 @@
-# Marc Guillaume — Accessibility Program Portfolio
+# Marc Guillaume | Accessibility Program Portfolio
 
-Static portfolio page for GitHub Pages. Policy → Practice — Access by Design.
+Static portfolio page for GitHub Pages. Policy → Practice: Access by Design.
 
 ## How to publish (one-time, ~10 minutes)
 
@@ -17,6 +17,6 @@ Static portfolio page for GitHub Pages. Policy → Practice — Access by Design
 ## Why GitHub Pages (not a Proton share link)
 Proton `/urls/` share links are frequently stripped or blocked by corporate
 email security gateways, and the `#key` fragment can be dropped by link
-rewriters — meaning a reviewer may get a broken link. A `github.io` URL with
+rewriters, meaning a reviewer may get a broken link. A `github.io` URL with
 the PDFs hosted in the same repo is same-origin and trusted: nothing in the
 path for a gateway to break.
